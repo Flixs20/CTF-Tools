@@ -1,0 +1,10 @@
+A small script that generates a new CTF writeup file from a given template, 
+so I don't have to manually copy the format each time.
+
+## Usage
+python new_writeup.py "Challenge Name" "Path/To/File"
+
+Example:
+python new_writeup.py "Hard CTF" "C:/Users/Name/CTF Writeup"
+
+This creates a file with the name "hard-ctf.md" pre-filled the write up format
