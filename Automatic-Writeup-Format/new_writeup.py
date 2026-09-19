@@ -30,7 +30,7 @@ Things I learned:
 """
 
 # Make sure we don't overwrite an existing writeup by accident
-if os.path.exists(filename):
+if os.path.exists(full_path):
     print(f"File '{filename}' already exists.")
     sys.exit(1)
 
