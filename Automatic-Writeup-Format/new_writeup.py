@@ -12,30 +12,32 @@ save_path = sys.argv[2]
 # Turn "Challenge Name" into a safe filename like "challenge-name.md"
 filename = challenge_name.lower().replace(" ", "-") + ".md"
 
-# Make sure the target folder exists adn creates it if it doesn't
+# Make sure the target folder exists — create it if it doesn't
 os.makedirs(save_path, exist_ok=True)
 
 # Combine folder + filename into the full file path
 full_path = os.path.join(save_path, filename)
 
-# The template used
-template = f"""# {challenge_name} — (category)
+# The template content, with the challenge name filled in
+template = f"""# {challenge_name}
+Category: 
 Difficulty: 
 Tools: 
 
 What I was given: 
 What worked: 
 Steps: 
-Things I learned: 
+  1. 
+One thing I learned: 
 """
 
 # Make sure we don't overwrite an existing writeup by accident
 if os.path.exists(full_path):
-    print(f"File '{filename}' already exists.")
+    print(f"File '{full_path}' already exists — not overwriting.")
     sys.exit(1)
 
 # Write the file
-with open(filename, "w") as f:
+with open(full_path, "w") as f:
     f.write(template)
 
-print(f"Created {filename}")
+print(f"Created {full_path}")
