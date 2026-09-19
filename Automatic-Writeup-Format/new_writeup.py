@@ -19,7 +19,7 @@ os.makedirs(save_path, exist_ok=True)
 full_path = os.path.join(save_path, filename)
 
 # The template used
-template = f"""# {challenge_name} — {category}
+template = f"""# {challenge_name} — (category)
 Difficulty: 
 Tools: 
 
